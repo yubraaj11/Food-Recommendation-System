@@ -8,8 +8,8 @@ Folder **Context-Aware-Recommendation** contains the code for recommending the f
 Folder **RecSys** contains the trained model for context-aware recommendation.  
 To use the trained model,
 `
-!pip install keras
-from keras import models
+!pip install keras  
+from keras import models  
 loaded_model = models.load_model('/path/to/RecSys')
 `
 
