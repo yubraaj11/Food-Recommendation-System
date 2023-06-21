@@ -15,6 +15,6 @@ To use the trained model,
 Steps:
 1. Clone the repository  
 `git clone https://github.com/yubraaj11/Food-Recommendation-System`  
-2. Open code in any IDE, preferable VsCode
+2. Open code in any IDE, preferable VsCode  
 Change directory to "Context-Aware-Recommendation" Folder then run  
-`python recommendation.py`
+`python Recommendation.py`
