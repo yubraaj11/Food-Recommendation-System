@@ -6,11 +6,11 @@ Model used: DeepCTR [Link](https://github.com/shenweichen/DeepCTR)
 
 Folder **Context-Aware-Recommendation** contains the code for recommending the food items based on the day of week and hour of day provided.  
 Folder **RecSys** contains the trained model for context-aware recommendation.  
-To use the trained model,
+To use the trained model,  
 `
 !pip install keras  
 from keras import models  
-loaded_model = models.load_model('/path/to/RecSys')
+loaded_model = models.load_model('/path/to/RecSys')  
 `
 
 Steps:
