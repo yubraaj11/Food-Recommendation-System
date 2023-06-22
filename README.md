@@ -6,7 +6,9 @@ This comprehensive system recommend food items to user. It has two models implem
 
 - Folder **Context-Aware-Recommendation** contains the code for recommending the food items based on the day of week and hour of day provided.  
 - Folder **RecSys** contains the trained model for context-aware recommendation.  
-  
+
+Install requirements for this project via:
+`pip install -r Requirements.txt`
   
  To use the trained model,  
 `!pip install keras`  
