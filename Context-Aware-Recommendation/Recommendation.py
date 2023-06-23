@@ -12,7 +12,7 @@ df_path = '../Dataset/Instacart_original.csv'
 instacart_df = pd.read_csv(df_path)
 
 # # if __name__ == "__main__":
-def recommendation(day: int, hour: int):
+def recommendation(day: int, hour: int) -> list:
     
     product_score = {}
 
@@ -58,10 +58,9 @@ def recommendation(day: int, hour: int):
     for key, value in top_10:
         # print(key)
         product_name = instacart_df.loc[instacart_df['product_id'] == key, 'product_name'].iloc[0]
-        # product_name = product_name.loc[0, 'product_name']
         product_list.append(product_name) 
-        return product_list
-        # print(product_dict)
+    
+    return product_list
 
 
 # recommendation(4, 12)
