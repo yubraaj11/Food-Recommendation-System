@@ -52,7 +52,7 @@ def recommendation(day: int, hour: int) -> list:
 
 
     # Recommending products to the user based on the day and hour provided by them
-    print("\n ***************Recommending*************** \n")
+    # print("\n ***************Recommending*************** \n")
 
     product_list  = []
     for key, value in top_10:

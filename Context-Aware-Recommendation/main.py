@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from Recommendation import recommendation
-
+from evaluation import eval_metrics
 app = FastAPI()
 
 
@@ -17,4 +17,6 @@ def food_rec(day: int, hour: int): # query parameters
         yield items
     # return {"message": "Items printed successfully"}
 
-        
+# @app.get("/evalmetrics")
+# def eval_metrics(day: int, hour: int):
+#     values = 
