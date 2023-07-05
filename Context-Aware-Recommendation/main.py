@@ -11,11 +11,20 @@ def read_root():
 
 @app.get("/foodRecSys")
 def food_rec(day: int, hour: int): # query parameters
+    """
+    Recommends food products based on the given day and hour.
+
+    Args:
+        day (int): The day for which recommendations are desired.
+        hour (int): The hour of the day for which recommendations are desired.
+
+    Yields:
+        str: A food product name recommended based on the given day and hour.
+    """
     product_name = recommendation(day=day, hour=hour)
     # return {"product_names": product_name}
     for items in product_name:
         yield items
-    # return {"message": "Items printed successfully"}
 
 # @app.get("/evalmetrics")
 # def eval_metrics(day: int, hour: int):

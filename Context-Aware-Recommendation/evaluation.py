@@ -16,18 +16,60 @@ actual_list = df1.loc[(df1['order_dow'] == day) & (df['order_hour_of_day'] == ho
 
 
 def precision_at_k(recommended_items, ground_truth_items , k ):
+    """
+    Calculates precision at k for a list of recommended items.
+    
+    Args:
+        recommended_items (list): List of recommended items.
+        ground_truth_items (list): List of ground truth items.
+        k (int): Number of items to consider for calculating precision.
+    
+    Returns:
+        float: Precision at k.
+    
+    Raises:
+        ValueError: If k is less than or equal to 0.
+    """
     recommended_k = recommended_items[:k]
     relevant_items = set(recommended_k) & set(ground_truth_items)
     precision = len(relevant_items) / float(k)
     return precision
 
 def recall_at_k(recommended_items, ground_truth_items , k):
+    """
+    Calculates recall at k for a list of recommended items.
+    
+    Args:
+        recommended_items (list): List of recommended items.
+        ground_truth_items (list): List of ground truth items.
+        k (int): Number of items to consider for calculating precision.
+    
+    Returns:
+        float: Recall at k.
+    
+    Raises:
+        ValueError: If k is less than or equal to 0.
+    """
     recommended_k = recommended_items[:k]
     relevant_items = set(recommended_k) & set(ground_truth_items)
     recall = len(relevant_items) / float(len(ground_truth_items))
     return recall
 
 def average_precision_at_k(recommended_items, ground_truth_items, k):
+    """
+    Calculates average precision at k for a list of recommended items.
+    
+    Args:
+        recommended_items (list): List of recommended items.
+        ground_truth_items (list): List of ground truth items.
+        k (int): Number of items to consider for calculating precision.
+    
+    Returns:
+        float: Average Precision at k.
+    
+    Raises:
+        ValueError: If k is less than or equal to 0.
+    """
     relevant_items = set(ground_truth_items)
     precision_sum = 0.0
     num_hits = 0
@@ -43,12 +85,40 @@ def average_precision_at_k(recommended_items, ground_truth_items, k):
     return average_precision
 
 def hit_rate_at_k(recommended_items, ground_truth_items, k):
+    """
+    Calculates hitrate at k for a list of recommended items.
+    
+    Args:
+        recommended_items (list): List of recommended items.
+        ground_truth_items (list): List of ground truth items.
+        k (int): Number of items to consider for calculating precision.
+    
+    Returns:
+        float: Hitrate at k.
+    
+    Raises:
+        ValueError: If k is less than or equal to 0.
+    """
     recommended_k = recommended_items[:k]
     hits = set(recommended_k) & set(ground_truth_items)
     hit_rate = len(hits) / float(len(ground_truth_items))
     return hit_rate
 
 def ndcg_at_k(recommended_items, ground_truth_items, k):
+    """
+    Calculates ndcg at k for a list of recommended items.
+    
+    Args:
+        recommended_items (list): List of recommended items.
+        ground_truth_items (list): List of ground truth items.
+        k (int): Number of items to consider for calculating precision.
+    
+    Returns:
+        float: nDCG at k.
+    
+    Raises:
+        ValueError: If k is less than or equal to 0.
+    """
     dcg = 0.0
     idcg = 0.0
 
@@ -63,6 +133,20 @@ def ndcg_at_k(recommended_items, ground_truth_items, k):
     return ndcg
 
 def item_coverage_at_k(recommended_items, unique_items, k):
+    """
+    Calculates itemCoverage at k for a list of recommended items.
+    
+    Args:
+        recommended_items (list): List of recommended items.
+        unique_items (list): List of unique items.
+        k (int): Number of items to consider for calculating precision.
+    
+    Returns:
+        float: Item Coverage at k.
+    
+    Raises:
+        ValueError: If k is less than or equal to 0.
+    """
     recommended_k = recommended_items[:k]
     coverage = len(set(recommended_k)) / float(len(unique_items))
     return coverage

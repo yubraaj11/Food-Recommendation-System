@@ -13,7 +13,24 @@ instacart_df = pd.read_csv(df_path)
 
 # # if __name__ == "__main__":
 def recommendation(day: int, hour: int) -> list:
-    
+    """
+    Provides a list of recommended food products based on the given day and hour.
+
+    Args:
+        day (int): The day for which recommendations are desired.
+        hour (int): The hour of the day for which recommendations are desired.
+
+    Returns:
+        list: A list of recommended food product names.
+
+    Raises:
+        FileNotFoundError: If the dictionary file specified in 'dict_path' is not found.
+
+    Notes:
+        - The 'dict_path' variable should contain the path to the dictionary file.
+        - The function utilizes a machine learning model ('loaded_model') and a dataset ('instacart_df').
+
+    """
     product_score = {}
 
     with open (dict_path, 'rb') as file:
@@ -62,5 +79,3 @@ def recommendation(day: int, hour: int) -> list:
     
     return product_list
 
-
-# recommendation(4, 12)
