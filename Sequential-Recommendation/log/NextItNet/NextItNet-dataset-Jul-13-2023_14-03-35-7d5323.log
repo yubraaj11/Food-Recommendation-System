@@ -101,3 +101,86 @@ device = cpu
 eval_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
 
 
+Thu 13 Jul 2023 14:26:14 INFO  dataset
+The number of users: 85871
+Average actions of users: 3.7697100267846744
+The number of items: 2966
+Average actions of items: 109.17537942664418
+The number of inters: 323705
+The sparsity of the dataset: 99.87290404156785%
+Remain Fields: ['user_id', 'item_id', 'timestamp']
+Thu 13 Jul 2023 14:26:48 INFO  [Training]: train_batch_size = [2048] train_neg_sample_args: [{'distribution': 'none', 'sample_num': 'none', 'alpha': 'none', 'dynamic': False, 'candidate_num': 0}]
+Thu 13 Jul 2023 14:26:48 INFO  [Evaluation]: eval_batch_size = [2048] eval_args: [{'group_by': 'user', 'order': 'TO', 'split': {'LS': 'valid_and_test'}, 'mode': 'full'}]
+Thu 13 Jul 2023 14:27:30 INFO  NextItNet(
+  (item_embedding): Embedding(2966, 64, padding_idx=0)
+  (residual_blocks): Sequential(
+    (0): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(2, 2))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (1): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(4, 4))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(8, 8))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (2): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(2, 2))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (3): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(4, 4))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(8, 8))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (4): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(2, 2))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (5): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(4, 4))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(8, 8))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (6): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(2, 2))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (7): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(4, 4))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(8, 8))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (8): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(2, 2))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+    (9): ResidualBlock_b(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(4, 4))
+      (ln1): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+      (conv2): Conv2d(64, 64, kernel_size=(1, 3), stride=(1, 1), dilation=(8, 8))
+      (ln2): LayerNorm((64,), eps=1e-08, elementwise_affine=True)
+    )
+  )
+  (final_layer): Linear(in_features=64, out_features=64, bias=True)
+  (loss_fct): CrossEntropyLoss()
+  (reg_loss): RegLoss()
+)
+Trainable parameters: 443584
+Thu 13 Jul 2023 14:33:23 INFO  epoch 0 training [time: 333.84s, train loss: 404.7268]
+Thu 13 Jul 2023 14:33:23 INFO  Saving current: saved\NextItNet-Jul-13-2023_14-27-49.pth
+Thu 13 Jul 2023 14:39:18 INFO  epoch 1 training [time: 355.32s, train loss: 399.3483]
+Thu 13 Jul 2023 14:39:18 INFO  Saving current: saved\NextItNet-Jul-13-2023_14-27-49.pth
