@@ -1,6 +1,7 @@
 # environment config : Sequential Recommendation
-data_path: 'data1/dataset/'
-checkpoint_dir: "saved/"
+data_path: "data1/"
+checkpoint_dir: "saved"
+reproducibility: False
 show_progress: True
 
 
@@ -16,9 +17,10 @@ LIST_SUFFIX: _list
 MAX_ITEM_LIST_LENGTH: 50
 
 # training and evaluation config : Sequential Recommendation
-epochs: 5
-train_batch_size: 4096
-eval_batch_size: 4096
+epochs: 2
+train_batch_size: 2048
+eval_batch_size: 2048
+learner: adam
 eval_args:
     group_by: user
     order: TO
