@@ -1,14 +1,14 @@
-model_path = '../RecSys/'
+model_path = 'RecSys'
 from keras import models
 import pickle
 import numpy as np
 import pandas as pd
 
 loaded_model = models.load_model(model_path)
-dict_path = '../Dataset/product_dict_v1.pkl'
+dict_path = 'Dataset\product_dict_v1.pkl'
 
 
-df_path = '../Dataset/Instacart_original.csv'
+df_path = 'Dataset\Instacart_original.csv'
 instacart_df = pd.read_csv(df_path)
 
 # # if __name__ == "__main__":
